@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hibernate-configuration>
+    <session-factory>
+        <!-- JDBC database connection settings -->
+        <property name="hibernate.dialect">org.hibernate.community.dialect.SQLiteDialect</property>
+        <property name="hibernate.connection.driver_class">org.sqlite.JDBC</property>
+        <property name="hibernate.connection.url">jdbc:sqlite:company_database.db</property> <!-- Usa una ruta relativa mejor -->
+        <property name="hibernate.hbm2ddl.auto">update</property> <!-- Crea o actualiza las tablas -->
+        <property name="hibernate.show_sql">false</property> <!-- Muestra las consultas SQL en la consola -->
+        <property name="hibernate.format_sql">true</property> <!-- Da formato a las consultas SQL -->
+
+        <!-- JDBC connection pool settings -->
+        <property name="hibernate.c3p0.min_size">5</property>
+        <property name="hibernate.c3p0.max_size">20</property>
+        <property name="hibernate.c3p0.timeout">300</property>
+        <property name="hibernate.c3p0.max_statements">50</property>
+        <property name="hibernate.c3p0.idle_test_period">300</property>
+
+        <!-- Specify annotated classes -->
+        <mapping class="org.example.Employee"/>
+        <mapping class="org.example.Customer"/>
+        <mapping class="org.example.Project"/>
+        <mapping class="org.example.Order"/>
+        <mapping class="org.example.OrderItem"/>
+        <mapping class="org.example.Presupuesto"/>
+        <mapping class="org.example.EmployeeRealistic"/>
+        <mapping class="org.example.Department"/>
+    </session-factory>
+</hibernate-configuration>

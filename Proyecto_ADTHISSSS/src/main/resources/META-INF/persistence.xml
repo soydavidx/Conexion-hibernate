@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence" version="3.0">
+    <persistence-unit name="my-persistence-unit">
+        <class>org.example.Employee</class>
+        <class>org.example.Project</class>
+        <class>org.example.Order</class>
+        <class>org.example.OrderItem</class>
+        <class>org.example.Presupuesto</class>
+        <class>org.example.Customer</class>
+        <class>org.example.EmployeeRealistic</class>
+        <class>org.example.Department</class>
+
+        <properties>
+            <!-- Configuración de conexión a SQLite -->
+            <property name="jakarta.persistence.jdbc.driver" value="org.sqlite.JDBC"/>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:sqlite:company_database.db"/>
+
+            <!-- Configuración de Hibernate -->
+            <property name="hibernate.dialect" value="org.hibernate.community.dialect.SQLiteDialect"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/> <!-- O "create" para recrear -->
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+            <property name="hibernate.use_sql_comments" value="true"/>
+            <property name="hibernate.type_resolution_logging" value="true"/>
+        </properties>
+    </persistence-unit>
+</persistence>
